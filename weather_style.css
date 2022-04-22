@@ -1,0 +1,27 @@
+.container {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: lightcyan;
+  border-radius: 20px;
+}
+
+.card-body {
+  border-radius: 20px;
+  background-color: lightgreen;
+}
+
+.weather-main-icon {
+  text-align: center;
+  font-size: 60px;
+}
+
+.col-sm-2 {
+  border-right: 2px solid grey;
+  text-align: center;
+  font-size: 20px;
+}
+
+.weather-desc {
+  font-size: 15px;
+  text-align: center;
+}
