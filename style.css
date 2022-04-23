@@ -25,3 +25,8 @@
   font-size: 15px;
   text-align: center;
 }
+.url {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
