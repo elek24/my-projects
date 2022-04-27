@@ -39,6 +39,18 @@ function getTemp(response) {
   temperature.innerHTML = `${temp}°C`;
   let description = document.querySelector(".weather-desc");
   description.innerHTML = response.data.weather[0].main;
+  let feelslike = document.querySelector(".feels-like");
+  feelslike.innerHTML = `Feels Like: ${Math.round(
+    response.data.main.feels_like
+  )}°C`;
+  let humidity = document.querySelector(".humidity");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let wind = document.querySelector(".wind");
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+  let mintemp = document.querySelector(".min-temp");
+  mintemp.innerHTML = `Min 🌡: ${Math.round(response.data.main.temp_min)}°C`;
+  let maxtemp = document.querySelector(".max-temp");
+  maxtemp.innerHTML = `Max 🌡: ${Math.round(response.data.main.temp_max)}°C`;
 }
 
 function typeCity(event) {

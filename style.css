@@ -1,13 +1,31 @@
 .container {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: monospace;
   background-color: lightcyan;
   border-radius: 20px;
 }
 
-.card-body {
+#weather-numbers {
   border-radius: 20px;
   background-color: lightgreen;
+}
+
+#weather-details {
+  font-family: monospace;
+  border-radius: 20px;
+  background-color: orchid;
+  text-align: right;
+}
+
+#sun-details {
+  font-family: monospace;
+  border-radius: 20px;
+  background-color: greenyellow;
+  text-align: right;
+
+}
+
+.card {
+  display: inline;
 }
 
 .weather-main-icon {

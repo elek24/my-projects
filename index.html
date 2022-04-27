@@ -41,69 +41,85 @@
               </button>
             </form>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h1>Toronto</h1>
-                  <div class="weather-detail__text">Sunday</div>
-                  <br />
-                </div>
-                <div class="col weather-main-icon">
-                  <i class="fa-solid fa-cloud-rain"></i>
-                </div>
-                <div class="col">
-                  <h1>
-                    <div
-                      class="weather-temp weather-temp--today"
-                      style="text-align: center"
-                    >
-                      15°C
-                    </div>
-                  </h1>
-                  <div class="weather-desc">Rain</div>
-                </div>
-
-                <hr />
+          <div class="card-deck">
+            <div class="card">
+              <div class="card-body" id="weather-numbers">
                 <div class="row">
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Mon</div>
+                  <div class="col">
+                    <h1>Toronto</h1>
+                    <div class="weather-detail__text">Sunday</div>
+                    <br />
+                  </div>
+                  <div class="col weather-main-icon">
                     <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
+                  </div>
+                  <div class="col">
+                    <h1>
+                      <div
+                        class="weather-temp weather-temp--today"
+                        style="text-align: center"
+                      >
+                        15°C
+                      </div>
+                    </h1>
                     <div class="weather-desc">Rain</div>
                   </div>
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Tue</div>
-                    <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
-                    <div class="weather-desc">Rain</div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Wed</div>
-                    <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
-                    <div class="weather-desc">Rain</div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Thu</div>
-                    <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
-                    <div class="weather-desc">Rain</div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Fri</div>
-                    <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
-                    <div class="weather-desc">Rain</div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="forecast-day">Sat</div>
-                    <i class="fa-solid fa-cloud-rain"></i>
-                    <div class="forecast-temperature">14°</div>
-                    <div class="weather-desc">Rain</div>
+
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Mon</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Tue</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Wed</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Thu</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Fri</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Sat</div>
+                      <i class="fa-solid fa-cloud-rain"></i>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body" id="weather-details">
+              <h3 class="feels-like">Feels like: 20°C</p>
+              <h3 class="humidity">Humidity: 87%</p>
+              <h3 class="wind">Wind: 10 m/s</p>
+            </div>
+            <br/>
+            <div class="card-body" id="sun-details">
+             <h3 class="min-temp">Min 🌡: 10°C</h3>
+             <h3 class="max-temp">Max 🌡: 18°C</h3>
             </div>
           </div>
         </div>
