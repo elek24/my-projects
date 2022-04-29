@@ -39,6 +39,8 @@ function getTemp(response) {
   temperature.innerHTML = `${temp}°C`;
   let description = document.querySelector(".weather-desc");
   description.innerHTML = response.data.weather[0].main;
+  let lookingOutside = document.querySelector("h3.description");
+  lookingOutside.innerHTML = `Hows it looking outside 👀: <hr/>${response.data.weather[0].description.toUpperCase()}`;
   let feelslike = document.querySelector(".feels-like");
   feelslike.innerHTML = `Feels Like: ${Math.round(
     response.data.main.feels_like
@@ -51,6 +53,11 @@ function getTemp(response) {
   mintemp.innerHTML = `Min 🌡: ${Math.round(response.data.main.temp_min)}°C`;
   let maxtemp = document.querySelector(".max-temp");
   maxtemp.innerHTML = `Max 🌡: ${Math.round(response.data.main.temp_max)}°C`;
+  let mainicon = document.querySelector("#weather-main-icon");
+  mainicon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function typeCity(event) {

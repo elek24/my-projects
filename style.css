@@ -4,26 +4,6 @@
   border-radius: 20px;
 }
 
-#weather-numbers {
-  border-radius: 20px;
-  background-color: lightgreen;
-}
-
-#weather-details {
-  font-family: monospace;
-  border-radius: 20px;
-  background-color: orchid;
-  text-align: right;
-}
-
-#sun-details {
-  font-family: monospace;
-  border-radius: 20px;
-  background-color: greenyellow;
-  text-align: right;
-
-}
-
 .card {
   display: inline;
 }
@@ -34,7 +14,9 @@
 }
 
 .col-sm-2 {
-  border-right: 2px solid grey;
+  display: block;
+  margin: auto;
+  padding: 0;
   text-align: center;
   font-size: 20px;
 }
@@ -47,4 +29,36 @@
   display: block;
   margin: auto;
   text-align: center;
+}
+
+.description {
+  font-weight: bold;
+}
+
+#weather-numbers {
+  border-radius: 20px;
+  background-color: lightgreen;
+}
+
+#looking-outside {
+  border-radius: 20px;
+  background-color: aqua;
+  text-align: center;
+}
+
+#weather-details {
+  border-radius: 20px;
+  background-color: orchid;
+  text-align: right;
+}
+
+#sun-details {
+  border-radius: 20px;
+  background-color: greenyellow;
+  text-align: right;
+}
+
+#weather-main-icon {
+  width: 100%;
+  image-rendering: auto smooth;
 }
