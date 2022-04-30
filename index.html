@@ -24,7 +24,7 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="input-group mb-3">
-            <form id="city">
+            <form id="city" class="col-sm-12">
               <input
                 type="text"
                 class="form-control"
@@ -33,7 +33,7 @@
                 aria-describedby="button-addon2"
               />
               <button
-                class="btn btn-outline-secondary"
+                class="btn btn-primary"
                 type="submit"
                 id="button-addon2"
               >
@@ -48,6 +48,9 @@
                   <div class="col">
                     <h1>Toronto</h1>
                     <div class="weather-detail__text">Sunday</div>
+                    <br/>
+                    <span class="units"><a href="#" id="celsius-link">°C</a> 🌡 <a href="#" id="fahrenheit-link">°F</a></span>
+
                     <br />
                   </div>
                   <div class="col weather-main-icon">
@@ -57,9 +60,11 @@
                     <h1>
                       <div
                         class="weather-temp weather-temp--today"
+                        id="temperature"
                         style="text-align: center"
                       >
                         15°C
+
                       </div>
                     </h1>
                     <div class="weather-desc">Rain</div>
