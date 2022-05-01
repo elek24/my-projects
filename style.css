@@ -44,6 +44,10 @@
   font-weight: bold;
 }
 
+#city-name::first-letter {
+  text-transform: capitalize;
+}
+
 #weather-numbers {
   border-radius: 20px;
   background-color: lightgreen;

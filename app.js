@@ -19,7 +19,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-dayday.innerHTML = `${days} ${hours}:${minutes}`;
+dayday.innerHTML = `Last updated: <br/>${days} ${hours}:${minutes}`;
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -49,7 +49,7 @@ function getTemp(response) {
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let wind = document.querySelector(".wind");
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed * 3.6)} km/h`;
   let mintemp = document.querySelector(".min-temp");
   mintemp.innerHTML = `Min 🌡: ${Math.round(response.data.main.temp_min)}°C`;
   let maxtemp = document.querySelector(".max-temp");
