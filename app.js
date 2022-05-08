@@ -32,6 +32,61 @@ function handleSubmit(event) {
 let form = document.querySelector("#city");
 form.addEventListener("submit", handleSubmit);
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast-panel");
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Mon</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="monday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Tue</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="tuesday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Wed</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="wednesday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Thu</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="thursday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Fri</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="friday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="forecast-day">Sat</div>
+                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="saturday-icon"></img>
+                      <div class="forecast-temperature">14°</div>
+                      <div class="weather-desc">Rain</div>
+                    </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `1d1d2ce4cc71e9ff6b42a9d2ea913c92`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
+
 function getTemp(response) {
   console.log(response.data);
   celsiusTemp = response.data.main.temp;
@@ -59,6 +114,8 @@ function getTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function typeCity(event) {
