@@ -131,24 +131,3 @@ function showPosition(position) {
   console.log(position);
 }
 navigator.geolocation.getCurrentPosition(showPosition);
-
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperature.innerHTML = `${Math.round(fahrenheitTemp)}°F`;
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = `${Math.round(celsiusTemp)}°C`;
-}
-
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
