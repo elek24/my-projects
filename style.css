@@ -75,3 +75,7 @@
   width: 100%;
   image-rendering: auto smooth;
 }
+
+.forecast-temperature-min {
+  color: orangered;
+}
