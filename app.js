@@ -32,59 +32,53 @@ function handleSubmit(event) {
 let form = document.querySelector("#city");
 form.addEventListener("submit", handleSubmit);
 
-function displayForecast() {
-  let forecast = document.querySelector("#forecast-panel");
-  let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Mon</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="monday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Tue</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="tuesday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Wed</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="wednesday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Thu</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="thursday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Fri</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="friday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>
-                    <div class="col-sm-2">
-                      <div class="forecast-day">Sat</div>
-                      <img src="http://openweathermap.org/img/wn/10d@2x.png" id="saturday-icon"></img>
-                      <div class="forecast-temperature">14°</div>
-                      <div class="weather-desc">Rain</div>
-                    </div>`;
-  forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
-displayForecast();
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
+  let forecastElement = document.querySelector("#forecast-panel");
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm-2">
+                      <div class="forecast-day">${formatDay(
+                        forecastDay.dt
+                      )}</div>
+                      <img src="http://openweathermap.org/img/wn/${
+                        forecastDay.weather[0].icon
+                      }@2x.png"></img>
+                      <div class="forecast-temperature-max">${Math.round(
+                        forecastDay.temp.max
+                      )}°C</div>
+                      <div class="forecast-temperature-min">${Math.round(
+                        forecastDay.temp.min
+                      )}°C</div>
+                      <div class="weather-desc">${
+                        forecastDay.weather[0].main
+                      }</div>
+                    </div>
+`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `1d1d2ce4cc71e9ff6b42a9d2ea913c92`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getTemp(response) {
