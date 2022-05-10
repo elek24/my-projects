@@ -24,6 +24,7 @@
 .weather-desc {
   font-size: 15px;
   text-align: center;
+  word-wrap: normal;
 }
 .url {
   display: block;
@@ -35,13 +36,8 @@
   font-weight: bold;
 }
 
-.units {
-  vertical-align: super;
-  font-size: 1rem;
-  background-color: gold;
-  padding: 6px;
-  border-radius: 15px;
-  font-weight: bold;
+.forecast-temperature-min {
+  color: orangered;
 }
 
 #city-name::first-letter {
@@ -76,6 +72,6 @@
   image-rendering: auto smooth;
 }
 
-.forecast-temperature-min {
-  color: orangered;
+#forecast-panel {
+  margin: auto;
 }
